@@ -10,20 +10,20 @@
   },
   "details": {
     "en": [
-      "dotfiles-common holds the configuration files shared by my Linux machines. Shell, editor, and terminal settings live in one repository instead of being copied between machines.",
-      "Small variants cover Manjaro and Pop!_OS, so the same base can be paired with the package and desktop differences of each distribution.",
+      "dotfiles-common holds the configuration files shared by my Linux machines. Shell, editor, and terminal settings live in one repository instead of being copied between machines. This repo, combined with the companion repos, is intended to be a single command to set up all my configs, font sizes and keybinds",
+      "Small variants cover Manjaro (pedromarquetti/manjaro_dot_files) and Pop!_OS (pedromarquetti/pop_dot_files), so the same base can be paired with the package and desktop differences of each distribution.",
       "The goal is a new machine that reaches a familiar setup quickly, without rebuilding every preference by hand."
     ],
     "pt-br": [
-      "O dotfiles-common guarda os arquivos de configuração compartilhados entre minhas máquinas Linux. Ajustes de shell, editor e terminal ficam em um único repositório, em vez de serem copiados de máquina em máquina.",
+      "O dotfiles-common guarda os arquivos de configuração compartilhados entre minhas máquinas Linux. Ajustes de shell, editor e terminal ficam em um único repositório, em vez de serem copiados de máquina em máquina. Esse repositório, em conjunto com os auxiliares, tem como intenção ser um comando para configurar todos os meus atalhos e tamanhos de fonte",
       "Pequenas variantes cobrem Manjaro e Pop!_OS, então a mesma base pode ser combinada com as diferenças de pacotes e de desktop de cada distribuição.",
       "O objetivo é deixar uma máquina nova com o ambiente familiar em pouco tempo, sem refazer cada preferência à mão."
     ]
   },
   "year": 2026,
   "order": 12,
-  "stack": ["Shell"],
+  "stack": ["Shell", "Linux", "Bash"],
   "repoUrl": "https://github.com/pedromarquetti/dotfiles-common",
   "status": "active",
-  "featured": false
+  "featured": true
 }

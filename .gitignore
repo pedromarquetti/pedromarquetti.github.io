@@ -29,8 +29,5 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 
-# Vercel
-.vercel
-
 # Lighthouse CI
 /.lighthouseci/

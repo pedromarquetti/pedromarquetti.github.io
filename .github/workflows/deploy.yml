@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Deploy only after the CI workflow finished successfully on main, so a broken
+  # build never reaches the site.
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+        with:
+          # Build the exact commit CI validated, even if main moved on since.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      # Builds the site, runs `npm ci`, and uploads the Pages artifact.
+      - name: Build and upload Pages artifact
+        uses: withastro/action@v6
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

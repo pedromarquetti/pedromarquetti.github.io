@@ -10,11 +10,13 @@
   },
   "details": {
     "en": [
+      "I was tired of the lack of accessibility for messaging apps, so I created my own front-end, multi app TUI. This is intended to be easy to use, no weird UI elements and focused on accessible interface",
       "send-rs brings Telegram and WhatsApp into the terminal. Conversations are listed and answered in a TUI built with Rust and Ratatui.",
       "Each messaging service is implemented behind a trait, and the interface talks only to that abstraction. Adding another protocol means implementing the trait, not rewriting the screens.",
       "The project is as much about the architecture as about chatting: it is a study in keeping a terminal interface stable while the back ends differ."
     ],
     "pt-br": [
+      "Estava cansado da falta de acessibilidade dos aplicativos de mensagem, então criei o meu aplicativo front-end multi plataforma. Este aplicativo tem como objetivo ser fácil de usar, sem UI pesada e com foco na acessibilidade.",
       "O send-rs leva Telegram e WhatsApp para o terminal. As conversas são listadas e respondidas em uma TUI feita com Rust e Ratatui.",
       "Cada serviço de mensagens é implementado atrás de uma trait, e a interface conversa apenas com essa abstração. Adicionar outro protocolo significa implementar a trait, não reescrever as telas.",
       "O projeto é tanto sobre arquitetura quanto sobre conversar: um estudo para manter a interface de terminal estável enquanto os back ends diferem."
@@ -28,8 +30,52 @@
         "pt-br": "Janela de conversa no terminal com um pop-up de mensagem oferecendo as ações Responder e Copiar."
       },
       "caption": {
-        "en": "Message actions in the conversation view.",
-        "pt-br": "Ações de mensagem na visualização da conversa."
+        "en": "Messages have a pop-up for actions such as copy, edit or delete",
+        "pt-br": "Mensagens tem um pop-up para executar ações como copiar, editar ou deletar."
+      }
+    },
+    {
+      "src": "./edit.png",
+      "alt": {
+        "en": "Terminal chat window with a message being edited.",
+        "pt-br": "Janela de conversa no terminal com uma mensagem sendo editada."
+      },
+      "caption": {
+        "en": "Send-rs supports editing messages. Original text appears above",
+        "pt-br": "Send-rs suporta edição de mensagens. A original aparece acima do campo de texto"
+      }
+    },
+    {
+      "src": "./reply.png",
+      "alt": {
+        "en": "Terminal chat window with a message being replied to.",
+        "pt-br": "Janela de conversa no terminal com uma mensagem sendo escrita como resposta para outra mensagem."
+      },
+      "caption": {
+        "en": "App also supports replying to messages. The Messenger properly handles mentioning the correct message.",
+        "pt-br": "O app também suporta resposta para mensagens. O mensageiro (WhatsApp/Telegram) fica responsável por mencionar o recipiente"
+      }
+    },
+    {
+      "src": "./record.png",
+      "alt": {
+        "en": "Audio message being recorded on terminal.",
+        "pt-br": "Mensagem de áudio sendo gravada no terminal"
+      },
+      "caption": {
+        "en": "Support for recording audio",
+        "pt-br": "Suporte para gravação de áudio"
+      }
+    },
+    {
+      "src": "./audioplayback.png",
+      "alt": {
+        "en": "Audio message being played on terminal.",
+        "pt-br": "Mensagem de áudio sendo reproduzida no terminal"
+      },
+      "caption": {
+        "en": "Support for audio playback",
+        "pt-br": "Suporte para reprodução de áudio"
       }
     }
   ],

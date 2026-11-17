@@ -1,7 +1,7 @@
 {
   "name": "pedro-marquetti-portfolio",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Bilingual portfolio site (EN/PT-BR) built with Astro and TypeScript.",
   "scripts": {

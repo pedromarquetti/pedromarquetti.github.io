@@ -2,6 +2,7 @@
 import type { Locale } from "../i18n/locales";
 import Icon from "./Icon.astro";
 import { t } from "../i18n/utils";
+import { site } from "../lib/site";
 
 interface Props {
   locale: Locale;
@@ -12,14 +13,19 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <p>{t(locale, "footer.rights", { year })}</p>
-  <p>|</p>
-  <a target="_blank" href="https://github.com/pedromarquetti">
-    <Icon
-      name="github"
-      class="icon"
-      style="display: block; margin: auto; text-align: center;  max-width: 40%; max-height: 40%;"
-    />
-    {t(locale, "footer.github")}
-  </a>
+  <div class="shell site-footer-inner">
+    <p>{t(locale, "footer.rights", { year })}</p>
+    <a href={`mailto:${site.email}`}>
+      <Icon name="mail" class="icon" />
+      {t(locale, "contact.email")}
+    </a>
+    <a target="_blank" rel="noreferrer" href={site.github}>
+      <Icon name="github" class="icon" />
+      {t(locale, "footer.github")}
+    </a>
+    <a target="_blank" rel="noreferrer" href={site.linkedin}>
+      <Icon name="linkedin" class="icon" />
+      {t(locale, "contact.linkedin")}
+    </a>
+  </div>
 </footer>

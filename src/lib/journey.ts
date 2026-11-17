@@ -1,12 +1,13 @@
 import type { Locale } from "../i18n/locales";
+import { link, type ProseParagraph } from "./prose";
 
 export type JourneyKind = "past" | "present" | "goal";
 
-export type InlineNode = string | { text: string; href: string };
+export type { InlineNode } from "./prose";
 
 // One body entry is one paragraph. Use a string for plain text, or an array of
 // inline nodes when the paragraph contains links.
-export type JourneyParagraph = string | InlineNode[];
+export type JourneyParagraph = ProseParagraph;
 
 export interface JourneyStep {
   id: string;
@@ -14,8 +15,6 @@ export interface JourneyStep {
   title: Record<Locale, string>;
   body: Record<Locale, JourneyParagraph[]>;
 }
-
-const link = (text: string, href: string): InlineNode => ({ text, href });
 
 export const journeySteps: JourneyStep[] = [
   {

@@ -1,0 +1,52 @@
+---
+import Icon from "./Icon.astro";
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import { site } from "../lib/site";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const links = [
+  {
+    icon: "mail",
+    label: t(locale, "contact.email"),
+    value: site.email,
+    href: `mailto:${site.email}`,
+    external: false,
+  },
+  {
+    icon: "github",
+    label: t(locale, "contact.github"),
+    value: "github.com/pedromarquetti",
+    href: site.github,
+    external: true,
+  },
+  {
+    icon: "linkedin",
+    label: t(locale, "contact.linkedin"),
+    value: "linkedin.com/in/pedro-h-l-m",
+    href: site.linkedin,
+    external: true,
+  },
+] as const;
+---
+
+<ul class="contact-links" role="list">
+  {links.map((entry) => (
+    <li>
+      <a
+        href={entry.href}
+        target={entry.external ? "_blank" : undefined}
+        rel={entry.external ? "noreferrer" : undefined}
+      >
+        <Icon name={entry.icon} class="icon" />
+        <span class="contact-label">{entry.label}</span>
+        <span class="contact-value">{entry.value}</span>
+      </a>
+    </li>
+  ))}
+</ul>

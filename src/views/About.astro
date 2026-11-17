@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactLinks from "../components/ContactLinks.astro";
+import Prose from "../components/Prose.astro";
+import type { Locale } from "../i18n/locales";
+import { localeLink, t } from "../i18n/utils";
+import { aboutSections } from "../lib/about";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const journeyHref = localeLink(locale, "journey");
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(locale, "page.about.title")}
+  description={t(locale, "page.about.description")}
+>
+  <header class="page-header">
+    <h1>{t(locale, "section.about")}</h1>
+    <p class="lead">{t(locale, "about.intro")}</p>
+  </header>
+
+  {aboutSections.map((section) => (
+    <section class="home-section" aria-labelledby={`about-${section.id}`}>
+      <div class="section-header">
+        <h2 id={`about-${section.id}`}>{section.title[locale]}</h2>
+      </div>
+      <div class="prose">
+        <Prose paragraphs={section.paragraphs[locale]} />
+      </div>
+    </section>
+  ))}
+
+  <section class="home-section" id="contact" aria-labelledby="contact-heading">
+    <div class="section-header">
+      <h2 id="contact-heading">{t(locale, "contact.title")}</h2>
+    </div>
+    <div class="prose">
+      <p>{t(locale, "contact.lead")}</p>
+      <ContactLinks locale={locale} />
+    </div>
+  </section>
+
+  <div class="journey-cta">
+    <a class="button button-secondary" href={journeyHref}>
+      {t(locale, "cta.journey")}
+    </a>
+  </div>
+</BaseLayout>

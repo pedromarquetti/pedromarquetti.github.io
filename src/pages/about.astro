@@ -1,13 +1,8 @@
 ---
-import Placeholder from "../views/Placeholder.astro";
+import About from "../views/About.astro";
 import { resolveLocale } from "../i18n/locales";
 
 const locale = resolveLocale(Astro.currentLocale);
 ---
 
-<Placeholder
-  locale={locale}
-  headingKey="nav.about"
-  titleKey="page.about.title"
-  descriptionKey="page.about.description"
-/>
+<About locale={locale} />

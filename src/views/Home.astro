@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactLinks from "../components/ContactLinks.astro";
+import Icon from "../components/Icon.astro";
 import ProjectGrid from "../components/ProjectGrid.astro";
 import type { Locale } from "../i18n/locales";
 import { localeLink, t } from "../i18n/utils";
+import { journeySteps } from "../lib/journey";
 import { getFeaturedProjects } from "../lib/projects";
-import Icon from "../components/Icon.astro";
 
 interface Props {
   locale: Locale;
@@ -12,6 +14,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const projects = await getFeaturedProjects();
+const journeyPreview = journeySteps.slice(0, 4);
 ---
 
 <BaseLayout
@@ -29,20 +32,18 @@ const projects = await getFeaturedProjects();
       <a class="button button-secondary" href={localeLink(locale, "journey")}>
         {t(locale, "cta.journey")}
       </a>
+      <a class="button button-secondary" href="#contact">
+        {t(locale, "cta.contact")}
+      </a>
     </div>
   </section>
 
-  <section class="home-section">
+  <section class="home-section" aria-labelledby="about-heading">
     <div class="section-header">
-      <h2>{t(locale, "section.about")}</h2>
+      <h2 id="about-heading">{t(locale, "section.about")}</h2>
       <a class="section-link" href={localeLink(locale, "about")}>
-        {t(locale, "projects.viewAll")}
-        <!-- TODO: make this icon the same size of the 'a' tag text + make it inline 'View all projects ->' -->
-        <Icon
-          name="arrow-right"
-          class="icon"
-          style="display: flex; margin: auto; text-align: center;  max-width: 20%; max-height: 20%;"
-        />
+        {t(locale, "section.aboutLink")}
+        <Icon name="arrow-right" class="icon" />
       </a>
     </div>
     <p>{t(locale, "section.description")}</p>
@@ -53,14 +54,45 @@ const projects = await getFeaturedProjects();
       <h2 id="featured-heading">{t(locale, "section.featured")}</h2>
       <a class="section-link" href={localeLink(locale, "projects")}>
         {t(locale, "projects.viewAll")}
-        <!-- TODO: make this icon the same size of the 'a' tag text + make it inline 'View all projects ->' -->
-        <Icon
-          name="arrow-right"
-          class="icon"
-          style="display: block; margin: auto; text-align: center;  max-width: 20%; max-height: 20%;"
-        />
+        <Icon name="arrow-right" class="icon" />
       </a>
     </div>
     <ProjectGrid projects={projects} locale={locale} />
+  </section>
+
+  <section class="home-section" aria-labelledby="journey-heading">
+    <div class="section-header">
+      <h2 id="journey-heading">{t(locale, "section.journey")}</h2>
+      <a class="section-link" href={localeLink(locale, "journey")}>
+        {t(locale, "section.journeyLink")}
+        <Icon name="arrow-right" class="icon" />
+      </a>
+    </div>
+    <ol class="journey-preview" role="list">
+      {journeyPreview.map((step, index) => (
+        <li data-kind={step.kind}>
+          <span class="journey-preview-marker" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span class="journey-preview-title">{step.title[locale]}</span>
+          {step.kind !== "past" && (
+            <span class="timeline-badge">
+              {t(
+                locale,
+                step.kind === "present" ? "timeline.present" : "timeline.goal",
+              )}
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="home-section" id="contact" aria-labelledby="contact-heading">
+    <div class="section-header">
+      <h2 id="contact-heading">{t(locale, "contact.title")}</h2>
+    </div>
+    <p>{t(locale, "contact.lead")}</p>
+    <ContactLinks locale={locale} />
   </section>
 </BaseLayout>

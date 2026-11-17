@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import Prose from "../components/Prose.astro";
 import type { Locale } from "../i18n/locales";
 import { localeLink, t } from "../i18n/utils";
 import { journeySteps } from "../lib/journey";
@@ -10,6 +12,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const projectsHref = localeLink(locale, "projects");
+const aboutHref = localeLink(locale, "about");
 ---
 
 <BaseLayout
@@ -42,29 +45,19 @@ const projectsHref = localeLink(locale, "projects");
               </span>
             )}
           </div>
-          {step.body[locale].map((paragraph) =>
-            typeof paragraph === "string" ? (
-              <p>{paragraph}</p>
-            ) : (
-              <p>
-                {paragraph.map((part) =>
-                  typeof part === "string" ? (
-                    part
-                  ) : (
-                    <a href={part.href}>{part.text}</a>
-                  ),
-                )}
-              </p>
-            ),
-          )}
+          <Prose paragraphs={step.body[locale]} />
         </div>
       </li>
     ))}
   </ol>
 
-  <p class="journey-cta">
+  <div class="journey-cta">
     <a class="button" href={projectsHref}>
       {t(locale, "cta.projects")}
     </a>
-  </p>
+    <a class="button button-secondary" href={aboutHref}>
+      {t(locale, "cta.about")}
+      <Icon name="arrow-right" class="icon" />
+    </a>
+  </div>
 </BaseLayout>

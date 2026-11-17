@@ -13,8 +13,9 @@ Bilingual (English / Brazilian Portuguese) portfolio built with
 ```bash
 npm ci          # install exact dependencies
 npm run dev     # start the dev server
-npm run check   # Astro + TypeScript diagnostics
-npm run format  # format with Prettier
+npm run check          # Astro + TypeScript diagnostics
+npm run check:content  # translation parity and content validation
+npm run format         # format with Prettier
 npm run build   # build the static site into dist/
 npm run preview # preview the production build
 ```

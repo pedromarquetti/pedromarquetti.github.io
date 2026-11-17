@@ -1,22 +1,8 @@
 ---
-const title = "Pedro Marquetti — Portfolio";
+import PagePlaceholder from "../components/PagePlaceholder.astro";
+import { resolveLocale } from "../i18n/locales";
+
+const locale = resolveLocale(Astro.currentLocale);
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pedro Marquetti's portfolio." />
-    <title>{title}</title>
-  </head>
-  <body>
-    <main>
-      <h1>Pedro Marquetti</h1>
-      <p>Portfolio rebuild in progress.</p>
-      <p>
-        <a href="https://github.com/pedromarquetti">GitHub</a>
-      </p>
-    </main>
-  </body>
-</html>
+<PagePlaceholder locale={locale} />

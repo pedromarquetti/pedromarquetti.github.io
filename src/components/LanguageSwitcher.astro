@@ -1,0 +1,23 @@
+---
+import { LANG_TAGS, LOCALES, LOCALE_NAMES, type Locale } from "../i18n/locales";
+import { localePath, t } from "../i18n/utils";
+
+interface Props {
+  locale: Locale;
+  pathname?: string;
+}
+
+const { locale, pathname = Astro.url.pathname } = Astro.props;
+const targetLocale =
+  LOCALES.find((candidate) => candidate !== locale) ?? locale;
+---
+
+<nav class="language-switcher" aria-label={t(locale, "language.label")}>
+  <a
+    href={localePath(targetLocale, pathname)}
+    lang={LANG_TAGS[targetLocale]}
+    hreflang={LANG_TAGS[targetLocale]}
+  >
+    {LOCALE_NAMES[targetLocale]}
+  </a>
+</nav>

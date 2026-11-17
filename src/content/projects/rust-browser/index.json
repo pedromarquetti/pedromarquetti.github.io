@@ -1,0 +1,29 @@
+{
+  "name": "Rust Browser",
+  "tagline": {
+    "en": "Minimalist terminal web browser with built-in SearXNG search.",
+    "pt-br": "Navegador web minimalista para o terminal, com busca SearXNG integrada."
+  },
+  "description": {
+    "en": "A text-based web browser that runs in the terminal, built with Rust and Ratatui. It renders pages as readable text and includes a SearXNG search prompt, so you can look things up without leaving the keyboard. The focus is speed and a distraction-free reading view.",
+    "pt-br": "Um navegador de texto que roda no terminal, feito em Rust com Ratatui. Ele transforma páginas em texto legível e traz uma busca SearXNG integrada, para pesquisar sem sair do teclado. O foco é velocidade e uma leitura sem distrações."
+  },
+  "details": {
+    "en": [
+      "Rust Browser is a web browser that runs inside the terminal. Pages are fetched, reduced to readable text, and drawn with Ratatui.",
+      "A SearXNG search prompt is part of the interface, so a lookup does not require opening another program or leaving the keyboard.",
+      "The project is an exploration of terminal interfaces and of how much of the web can be read without images, scripts, or a full rendering engine."
+    ],
+    "pt-br": [
+      "O Rust Browser é um navegador web que roda dentro do terminal. As páginas são buscadas, reduzidas a texto legível e desenhadas com Ratatui.",
+      "Um campo de busca SearXNG faz parte da interface, então uma pesquisa não exige abrir outro programa nem tirar as mãos do teclado.",
+      "O projeto explora interfaces de terminal e até que ponto a web pode ser lida sem imagens, scripts ou um motor de renderização completo."
+    ]
+  },
+  "year": 2026,
+  "order": 4,
+  "stack": ["Rust", "Ratatui"],
+  "repoUrl": "https://github.com/pedromarquetti/rust-browser",
+  "status": "active",
+  "featured": true
+}

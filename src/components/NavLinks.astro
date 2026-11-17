@@ -23,12 +23,20 @@ const links = [
   },
   { key: "nav.about", path: "/about/", href: localeLink(locale, "about") },
 ] as const;
+
+function isActive(path: string): boolean {
+  if (currentPath === path) {
+    return true;
+  }
+
+  return path === "/projects/" && currentPath.startsWith("/project/");
+}
 ---
 
 <ul class="nav-links">
   {links.map(({ key, path, href }) => (
     <li>
-      <a href={href} aria-current={currentPath === path ? "page" : undefined}>
+      <a href={href} aria-current={isActive(path) ? "page" : undefined}>
         {t(locale, key)}
       </a>
     </li>

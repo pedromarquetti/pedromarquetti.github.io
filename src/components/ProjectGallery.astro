@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import type { Project } from "../lib/projects";
+
+interface Props {
+  images: Project["data"]["images"];
+  locale: Locale;
+}
+
+const { images, locale } = Astro.props;
+---
+
+{images.length > 0 && (
+  <section class="project-section" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">{t(locale, "project.gallery")}</h2>
+    <div class="project-gallery">
+      {images.map((image) => (
+        <figure class="project-gallery-item">
+          <Image
+            src={image.src}
+            alt={image.alt[locale]}
+            loading="lazy"
+            decoding="async"
+          />
+          {image.caption && <figcaption>{image.caption[locale]}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import ProjectGallery from "../components/ProjectGallery.astro";
+import ProjectLinks from "../components/ProjectLinks.astro";
+import StatusBadge from "../components/StatusBadge.astro";
+import type { Locale } from "../i18n/locales";
+import { localeLink, t } from "../i18n/utils";
+import type { Project } from "../lib/projects";
+
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+
+const { project, locale } = Astro.props;
+const { data } = project;
+const projectsHref = localeLink(locale, "projects");
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(locale, "page.project.title", { name: data.name })}
+  description={data.tagline[locale]}
+>
+  <article class="project-detail">
+    <a class="back-link" href={projectsHref}>
+      <Icon name="arrow-left" class="icon" />
+      {t(locale, "project.back")}
+    </a>
+
+    <header class="project-detail-header">
+      <h1>{data.name}</h1>
+      <p class="lead">{data.tagline[locale]}</p>
+
+      <ul class="project-facts" role="list">
+        <li>
+          <span class="project-fact-label">{t(locale, "project.status")}</span>
+          <StatusBadge status={data.status} locale={locale} />
+        </li>
+        <li>
+          <span class="project-fact-label">{t(locale, "projects.year")}</span>
+          <span class="project-year">{data.year}</span>
+        </li>
+        <li>
+          <span class="project-fact-label">{t(locale, "projects.stack")}</span>
+          <ul class="project-stack">
+            {data.stack.map((technology) => (
+              <li>{technology}</li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+
+      <ProjectLinks project={project} locale={locale} />
+    </header>
+
+    <section class="project-section" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">{t(locale, "project.overview")}</h2>
+      <p>{data.description[locale]}</p>
+      {data.details[locale].map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+      {data.highlights && (
+        <>
+          <h3>{t(locale, "project.highlights")}</h3>
+          <ul class="project-highlights">
+            {data.highlights[locale].map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
+
+    <ProjectGallery images={data.images} locale={locale} />
+
+    <a class="back-link" href={projectsHref}>
+      <Icon name="arrow-left" class="icon" />
+      {t(locale, "project.back")}
+    </a>
+  </article>
+</BaseLayout>

@@ -1,0 +1,29 @@
+{
+  "name": "lotto-ds",
+  "tagline": {
+    "en": "Python analysis of past Brazilian lottery results.",
+    "pt-br": "Análise de resultados passados da loteria brasileira em Python."
+  },
+  "description": {
+    "en": "A data analysis project that collects historical Brazilian lottery results and plots them. It uses Requests and Beautiful Soup to gather the numbers, then Pandas to organise the data and generate graphs. Built to practise scraping and exploratory analysis.",
+    "pt-br": "Um projeto de análise de dados que reúne resultados históricos da loteria brasileira e gera gráficos. Usa Requests e Beautiful Soup para coletar os números, e Pandas para organizar os dados e montar as visualizações. Feito para praticar scraping e análise exploratória."
+  },
+  "details": {
+    "en": [
+      "lotto-ds collects historical Brazilian lottery results and turns them into charts. Requests and Beautiful Soup gather the numbers; Pandas organises them and builds the plots.",
+      "The work is mostly data preparation: normalising draws, handling missing periods, and shaping the results into something that can be compared.",
+      "It was built to practise scraping and exploratory analysis on a public data set with a simple, well-defined structure."
+    ],
+    "pt-br": [
+      "O lotto-ds reúne resultados históricos da loteria brasileira e os transforma em gráficos. Requests e Beautiful Soup coletam os números; o Pandas organiza os dados e monta as visualizações.",
+      "O trabalho é sobretudo de preparação: normalizar os sorteios, lidar com períodos ausentes e dar aos resultados um formato comparável.",
+      "Foi feito para praticar scraping e análise exploratória em um conjunto de dados público, com estrutura simples e bem definida."
+    ]
+  },
+  "year": 2022,
+  "order": 9,
+  "stack": ["Python", "Requests", "Beautiful Soup", "Pandas"],
+  "repoUrl": "https://github.com/pedromarquetti/lotto-ds",
+  "status": "maintained",
+  "featured": false
+}

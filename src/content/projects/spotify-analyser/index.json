@@ -1,0 +1,29 @@
+{
+  "name": "spotify-analyser",
+  "tagline": {
+    "en": "Python tool for analysing Spotify account usage.",
+    "pt-br": "Ferramenta em Python para analisar o uso de uma conta do Spotify."
+  },
+  "description": {
+    "en": "A data analysis tool that reads a Spotify account export and summarises listening habits. It looks at plays over time and the artists and tracks that appear most often. A compact exercise in handling real, messy personal data.",
+    "pt-br": "Uma ferramenta de análise que lê a exportação de uma conta do Spotify e resume os hábitos de escuta. Examina reproduções ao longo do tempo e os artistas e faixas mais frequentes. Um exercício compacto de lidar com dados pessoais reais e desorganizados."
+  },
+  "details": {
+    "en": [
+      "spotify-analyser reads a Spotify account export and summarises listening habits. It looks at plays over time and at the artists and tracks that appear most often.",
+      "The interesting part is the input: a real personal export, with its own quirks and gaps, rather than a clean sample data set.",
+      "The output is a compact analysis, written in Python, kept as a small exercise in handling personal data."
+    ],
+    "pt-br": [
+      "O spotify-analyser lê a exportação de uma conta do Spotify e resume os hábitos de escuta. Ele examina reproduções ao longo do tempo e os artistas e faixas mais frequentes.",
+      "A parte interessante é a entrada: uma exportação pessoal real, com suas particularidades e lacunas, e não uma amostra limpa.",
+      "A saída é uma análise compacta, escrita em Python, mantida como um pequeno exercício de lidar com dados pessoais."
+    ]
+  },
+  "year": 2024,
+  "order": 10,
+  "stack": ["Python"],
+  "repoUrl": "https://github.com/pedromarquetti/spotify-analyser",
+  "status": "maintained",
+  "featured": false
+}

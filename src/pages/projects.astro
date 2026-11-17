@@ -1,13 +1,8 @@
 ---
-import Placeholder from "../views/Placeholder.astro";
+import Projects from "../views/Projects.astro";
 import { resolveLocale } from "../i18n/locales";
 
 const locale = resolveLocale(Astro.currentLocale);
 ---
 
-<Placeholder
-  locale={locale}
-  headingKey="nav.projects"
-  titleKey="page.projects.title"
-  descriptionKey="page.projects.description"
-/>
+<Projects locale={locale} />

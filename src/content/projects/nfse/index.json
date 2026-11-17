@@ -1,0 +1,31 @@
+{
+  "name": "NFS-e",
+  "tagline": {
+    "en": "Web app for issuing Brazilian electronic service invoices.",
+    "pt-br": "Aplicativo web para emitir notas fiscais de serviço (NFS-e)."
+  },
+  "description": {
+    "en": "A browser-based tool for creating Brazilian electronic service invoices (NFS-e). It handles the form and produces the document without a back end. Written in plain JavaScript and HTML, and still available online.",
+    "pt-br": "Uma ferramenta no navegador para gerar notas fiscais de serviço eletrônicas (NFS-e). Ela cuida do formulário e produz o documento sem back-end. Feita em JavaScript e HTML puros, e continua disponível online."
+  },
+  "details": {
+    "en": [
+      "NFS-e is a browser tool for producing Brazilian electronic service invoices. The form collects the issuer, customer, and service data, and the page generates the document.",
+      "Everything runs in the browser, with no back end to maintain. The interface is written in plain JavaScript and HTML.",
+      "It was built as a practical exercise in form handling and in the rules behind a fiscal document, and it remains online as a working example."
+    ],
+    "pt-br": [
+      "O NFS-e é uma ferramenta de navegador para gerar notas fiscais de serviço eletrônicas. O formulário reúne os dados do prestador, do tomador e do serviço, e a página monta o documento.",
+      "Tudo roda no navegador, sem back-end para manter. A interface é escrita em JavaScript e HTML puros.",
+      "Foi feito como exercício prático de manipulação de formulários e das regras por trás de um documento fiscal, e continua no ar como exemplo funcional."
+    ]
+  },
+  "year": 2025,
+  "order": 3,
+  "stack": ["JavaScript", "HTML"],
+  "repoUrl": "https://github.com/pedromarquetti/NFSe",
+  "liveUrl": "https://pedromarquetti.github.io/NFSe/",
+  "liveKind": "demo",
+  "status": "learning",
+  "featured": true
+}

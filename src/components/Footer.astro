@@ -1,5 +1,6 @@
 ---
 import type { Locale } from "../i18n/locales";
+import Icon from "./Icon.astro";
 import { t } from "../i18n/utils";
 
 interface Props {
@@ -14,6 +15,11 @@ const year = new Date().getFullYear();
   <p>{t(locale, "footer.rights", { year })}</p>
   <p>|</p>
   <a target="_blank" href="https://github.com/pedromarquetti">
+    <Icon
+      name="github"
+      class="icon"
+      style="display: block; margin: auto; text-align: center;  max-width: 40%; max-height: 40%;"
+    />
     {t(locale, "footer.github")}
   </a>
 </footer>

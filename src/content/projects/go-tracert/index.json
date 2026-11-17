@@ -1,0 +1,31 @@
+{
+  "name": "go-tracert",
+  "tagline": {
+    "en": "A basic traceroute implementation written in Go.",
+    "pt-br": "Uma implementação básica de traceroute escrita em Go."
+  },
+  "description": {
+    "en": "A small network tool that traces the route packets take to a host, written in Go. It is an exercise in raw sockets, ICMP, and time-to-live handling rather than a production replacement for traceroute. The output stays close to the command-line tools I use at work.",
+    "pt-br": "Uma ferramenta de rede que mostra o caminho dos pacotes até um host, escrita em Go. É um exercício com sockets brutos, ICMP e controle de time-to-live, não um substituto de produção para o traceroute. A saída fica próxima das ferramentas de linha de comando que uso no trabalho."
+  },
+  "details": {
+    "en": [
+      "go-tracert is a basic traceroute implementation in Go. It shows the path packets take to a host, one hop at a time.",
+      "This is also a learning project: one of my first interactions with Go",
+      "The exercise is in the network layer: raw sockets, ICMP messages, and the time-to-live field that makes each hop reveal itself.",
+      "The output stays close to the command-line tools I use at work, which makes it easy to compare results while learning."
+    ],
+    "pt-br": [
+      "O go-tracert é uma implementação básica de traceroute em Go. Ele mostra o caminho que os pacotes percorrem até um host, salto a salto.",
+      "Este também é um projeto de aprendizado: um dos meus primeiros com Go",
+      "O exercício está na camada de rede: sockets brutos, mensagens ICMP e o campo time-to-live que faz cada salto se revelar.",
+      "A saída fica próxima das ferramentas de linha de comando que uso no trabalho, o que facilita comparar resultados durante o aprendizado."
+    ]
+  },
+  "year": 2025,
+  "order": 11,
+  "stack": ["Go"],
+  "repoUrl": "https://github.com/pedromarquetti/go-tracert",
+  "status": "learning",
+  "featured": false
+}

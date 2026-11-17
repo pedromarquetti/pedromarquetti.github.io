@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
 import type { Locale } from "../i18n/locales";
 import { localeLink, t } from "../i18n/utils";
+import { getFeaturedProjects } from "../lib/projects";
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const projects = await getFeaturedProjects();
 ---
 
 <BaseLayout
@@ -26,5 +29,15 @@ const { locale } = Astro.props;
         {t(locale, "cta.journey")}
       </a>
     </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="featured-heading">
+    <div class="section-header">
+      <h2 id="featured-heading">{t(locale, "section.featured")}</h2>
+      <a class="section-link" href={localeLink(locale, "projects")}>
+        {t(locale, "projects.viewAll")}
+      </a>
+    </div>
+    <ProjectGrid projects={projects} locale={locale} />
   </section>
 </BaseLayout>

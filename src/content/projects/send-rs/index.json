@@ -1,0 +1,29 @@
+{
+  "name": "send-rs",
+  "tagline": {
+    "en": "Terminal interface for Telegram and WhatsApp, built in Rust.",
+    "pt-br": "Interface de terminal para Telegram e WhatsApp, feita em Rust."
+  },
+  "description": {
+    "en": "A TUI for chatting on Telegram and WhatsApp from the terminal. The messaging services sit behind a modular, trait-based architecture, so a new protocol can be added without rewriting the interface. Built with Rust and Ratatui.",
+    "pt-br": "Uma TUI para conversar no Telegram e no WhatsApp pelo terminal. Os serviços ficam atrás de uma arquitetura modular baseada em traits, então um novo protocolo pode ser adicionado sem reescrever a interface. Feita em Rust com Ratatui."
+  },
+  "details": {
+    "en": [
+      "send-rs brings Telegram and WhatsApp into the terminal. Conversations are listed and answered in a TUI built with Rust and Ratatui.",
+      "Each messaging service is implemented behind a trait, and the interface talks only to that abstraction. Adding another protocol means implementing the trait, not rewriting the screens.",
+      "The project is as much about the architecture as about chatting: it is a study in keeping a terminal interface stable while the back ends differ."
+    ],
+    "pt-br": [
+      "O send-rs leva Telegram e WhatsApp para o terminal. As conversas são listadas e respondidas em uma TUI feita com Rust e Ratatui.",
+      "Cada serviço de mensagens é implementado atrás de uma trait, e a interface conversa apenas com essa abstração. Adicionar outro protocolo significa implementar a trait, não reescrever as telas.",
+      "O projeto é tanto sobre arquitetura quanto sobre conversar: um estudo para manter a interface de terminal estável enquanto os back ends diferem."
+    ]
+  },
+  "year": 2026,
+  "order": 5,
+  "stack": ["Rust", "Ratatui"],
+  "repoUrl": "https://github.com/pedromarquetti/send-rs",
+  "status": "active",
+  "featured": true
+}

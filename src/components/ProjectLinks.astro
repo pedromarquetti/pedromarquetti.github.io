@@ -1,0 +1,33 @@
+---
+import Icon from "./Icon.astro";
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import { liveKey, type Project } from "../lib/projects";
+
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+
+const { project, locale } = Astro.props;
+const { data } = project;
+---
+
+<div class="project-links">
+  {data.liveUrl && (
+    <a class="project-link project-link-primary" href={data.liveUrl}>
+      {t(locale, liveKey(data.liveKind))}
+      <Icon name="external" class="icon" />
+    </a>
+  )}
+  {data.docsUrl && (
+    <a class="project-link" href={data.docsUrl}>
+      {t(locale, "link.docs")}
+      <Icon name="external" class="icon" />
+    </a>
+  )}
+  <a class="project-link" href={data.repoUrl}>
+    {t(locale, "link.source")}
+    <Icon name="github" class="icon" />
+  </a>
+</div>

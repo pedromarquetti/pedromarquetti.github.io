@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import { getProjects } from "../lib/projects";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const projects = await getProjects();
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(locale, "page.projects.title")}
+  description={t(locale, "page.projects.description")}
+>
+  <header class="page-header">
+    <h1>{t(locale, "projects.heading")}</h1>
+    <p class="lead">{t(locale, "projects.intro")}</p>
+  </header>
+
+  <ProjectGrid projects={projects} locale={locale} headingLevel={2} />
+</BaseLayout>

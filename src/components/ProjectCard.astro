@@ -1,0 +1,37 @@
+---
+import Icon from "./Icon.astro";
+import ProjectLinks from "./ProjectLinks.astro";
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import { projectHref, type Project } from "../lib/projects";
+
+interface Props {
+  project: Project;
+  locale: Locale;
+  headingLevel?: 2 | 3;
+}
+
+const { project, locale, headingLevel = 3 } = Astro.props;
+const { data } = project;
+const Heading = (headingLevel === 2 ? "h2" : "h3") as "h2" | "h3";
+---
+
+<article class="project-card">
+  <header class="project-card-header">
+    <Heading class="project-card-title">
+      <a href={projectHref(locale, project)}>
+        {data.name}
+        <span class="visually-hidden">
+          &nbsp;— {t(locale, "projects.viewDetails")}
+        </span>
+      </a>
+    </Heading>
+    <span class="project-card-arrow" aria-hidden="true">
+      <Icon name="arrow-right" class="icon" />
+    </span>
+  </header>
+
+  <p class="project-card-tagline">{data.tagline[locale]}</p>
+
+  <ProjectLinks project={project} locale={locale} />
+</article>

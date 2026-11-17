@@ -1,0 +1,23 @@
+---
+import ProjectDetail from "../../views/ProjectDetail.astro";
+import { resolveLocale } from "../../i18n/locales";
+import { getProjects, type Project } from "../../lib/projects";
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+---
+
+<ProjectDetail locale={locale} project={project} />

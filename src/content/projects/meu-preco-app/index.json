@@ -1,0 +1,31 @@
+{
+  "name": "Meu Preço",
+  "tagline": {
+    "en": "Flutter app for checking supermarket prices from your own receipt history.",
+    "pt-br": "Aplicativo Flutter para consultar preços de supermercado pelo seu histórico."
+  },
+  "description": {
+    "en": "A mobile front end for the Meu Preço API, built with Flutter for Android. Enter a supermarket receipt and browse the price history stored for each product. It turns a personal price archive into something you can check while shopping.",
+    "pt-br": "Um aplicativo móvel para a API Meu Preço, feito com Flutter para Android. Registre uma nota fiscal de supermercado e consulte o histórico de preços de cada produto. Transforma um arquivo pessoal de compras em uma consulta rápida no mercado."
+  },
+  "details": {
+    "en": [
+      "Meu Preço is the Android front end for the Meu Preço API. A supermarket receipt is entered once, and the app then shows what each product has cost over time.",
+      "The interface is built with Flutter. The flow is deliberately short: register a purchase, open a product, and read its price history before the next shopping trip.",
+      "The API behind it stores the parsed items; the app focuses on presenting them clearly on a phone screen."
+    ],
+    "pt-br": [
+      "O Meu Preço é o front end Android da API Meu Preço. A nota fiscal é registrada uma vez e o aplicativo passa a mostrar quanto cada produto custou ao longo do tempo.",
+      "A interface é feita em Flutter. O fluxo é curto de propósito: registrar uma compra, abrir um produto e consultar o histórico de preços antes da próxima ida ao mercado.",
+      "A API por trás guarda os itens interpretados; o aplicativo se concentra em apresentá-los com clareza na tela do celular."
+    ]
+  },
+  "year": 2026,
+  "order": 1,
+  "stack": ["Dart", "Flutter"],
+  "repoUrl": "https://github.com/pedromarquetti/meu-preco-flutter",
+  "liveUrl": "https://meupreco.phlm.dev.br/",
+  "liveKind": "app",
+  "status": "active",
+  "featured": true
+}

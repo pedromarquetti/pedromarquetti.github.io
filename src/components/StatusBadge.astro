@@ -1,0 +1,17 @@
+---
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+import { statusKey, type Project } from "../lib/projects";
+
+interface Props {
+  status: Project["data"]["status"];
+  locale: Locale;
+}
+
+const { status, locale } = Astro.props;
+---
+
+<span class="project-status" data-status={status}>
+  <span class="project-status-dot" aria-hidden="true"></span>
+  {t(locale, statusKey(status))}
+</span>

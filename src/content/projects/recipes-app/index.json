@@ -1,0 +1,29 @@
+{
+  "name": "recipes-app",
+  "tagline": {
+    "en": "Full-stack recipe manager built with Rust, Yew, and PostgreSQL.",
+    "pt-br": "Gerenciador de receitas full-stack com Rust, Yew e PostgreSQL."
+  },
+  "description": {
+    "en": "A full-stack app for saving and organising food recipes. The front end uses Yew compiled to WebAssembly, with a Rust back end and PostgreSQL for storage; Docker keeps the setup reproducible. The project explores performance, type safety, and memory efficiency across the stack.",
+    "pt-br": "Um aplicativo full-stack para guardar e organizar receitas. O front end usa Yew compilado para WebAssembly, com back end em Rust e PostgreSQL para armazenamento; o Docker mantém o ambiente reproduzível. O projeto explora desempenho, segurança de tipos e eficiência de memória em toda a pilha."
+  },
+  "details": {
+    "en": [
+      "recipes-app is a full-stack recipe manager. Recipes are created and organised in a web interface, with the data stored in PostgreSQL.",
+      "The front end is written in Rust with Yew and compiled to WebAssembly; the back end is also Rust. Keeping one language across the stack is part of the exercise, along with the type safety it brings.",
+      "Docker provides the database and the services, so the whole environment can be started the same way on any machine."
+    ],
+    "pt-br": [
+      "O recipes-app é um gerenciador de receitas full-stack. As receitas são criadas e organizadas em uma interface web, com os dados guardados no PostgreSQL.",
+      "O front end é escrito em Rust com Yew e compilado para WebAssembly; o back end também é Rust. Manter uma única linguagem em toda a pilha faz parte do exercício, junto com a segurança de tipos que ela traz.",
+      "O Docker fornece o banco e os serviços, então o ambiente inteiro sobe da mesma forma em qualquer máquina."
+    ]
+  },
+  "year": 2023,
+  "order": 6,
+  "stack": ["Rust", "Yew", "PostgreSQL", "Docker"],
+  "repoUrl": "https://github.com/pedromarquetti/recipes-app",
+  "status": "maintained",
+  "featured": true
+}

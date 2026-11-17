@@ -1,0 +1,31 @@
+{
+  "name": "React Notes App",
+  "tagline": {
+    "en": "Notes app built while learning React and TypeScript.",
+    "pt-br": "Aplicativo de notas criado durante o aprendizado de React e TypeScript."
+  },
+  "description": {
+    "en": "A small notes app written in React and TypeScript during my first steps with component-based interfaces. It supports creating, editing, and deleting notes in the browser. Kept online as a record of that learning stage.",
+    "pt-br": "Um aplicativo de notas simples, escrito em React e TypeScript nos meus primeiros passos com interfaces baseadas em componentes. Permite criar, editar e excluir notas no navegador. Mantido no ar como registro dessa etapa de aprendizado."
+  },
+  "details": {
+    "en": [
+      "React Notes App is a small notes application built while learning React and TypeScript. Notes can be created, edited, and deleted in the browser.",
+      "The project marks a first contact with component-based interfaces: state, props, and typed components in a scope small enough to follow end to end.",
+      "It stays online as a record of that stage rather than as a maintained product."
+    ],
+    "pt-br": [
+      "O React Notes App é um aplicativo de notas simples, feito durante o aprendizado de React e TypeScript. As notas podem ser criadas, editadas e excluídas no navegador.",
+      "O projeto marca o primeiro contato com interfaces baseadas em componentes: estado, props e componentes tipados em um escopo pequeno o bastante para acompanhar de ponta a ponta.",
+      "Ele continua no ar como registro dessa etapa, não como um produto mantido."
+    ]
+  },
+  "year": 2022,
+  "order": 7,
+  "stack": ["React", "TypeScript"],
+  "repoUrl": "https://github.com/pedromarquetti/react-notes-app",
+  "liveUrl": "https://pedromarquetti.github.io/react-notes-app/",
+  "liveKind": "demo",
+  "status": "learning",
+  "featured": false
+}

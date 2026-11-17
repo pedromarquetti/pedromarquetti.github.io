@@ -1,0 +1,31 @@
+{
+  "name": "Calculator",
+  "tagline": {
+    "en": "A calculator built with plain HTML, CSS, and JavaScript.",
+    "pt-br": "Calculadora feita com HTML, CSS e JavaScript puros."
+  },
+  "description": {
+    "en": "One of my first web projects: a working calculator with no framework or build step. The markup, styles, and logic are all in plain HTML, CSS, and JavaScript. It remains online as a starting point I can look back on.",
+    "pt-br": "Um dos meus primeiros projetos web: uma calculadora funcional, sem framework nem etapa de build. A estrutura, os estilos e a lógica estão em HTML, CSS e JavaScript puros. Continua no ar como um ponto de partida para consultar."
+  },
+  "details": {
+    "en": [
+      "Calculator is one of my first web projects: a working calculator with no framework and no build step. The markup, styles, and logic are plain HTML, CSS, and JavaScript.",
+      "The buttons, the display, and the operations are all handled directly in the page, which makes the whole project readable in a single sitting.",
+      "It remains online as a starting point I can look back on."
+    ],
+    "pt-br": [
+      "A Calculator é um dos meus primeiros projetos web: uma calculadora funcional, sem framework e sem etapa de build. A estrutura, os estilos e a lógica são HTML, CSS e JavaScript puros.",
+      "Os botões, o visor e as operações são tratados diretamente na página, o que deixa o projeto inteiro legível de uma só vez.",
+      "Ela continua no ar como um ponto de partida para consultar."
+    ]
+  },
+  "year": 2021,
+  "order": 8,
+  "stack": ["JavaScript", "CSS", "HTML"],
+  "repoUrl": "https://github.com/pedromarquetti/calculator",
+  "liveUrl": "https://pedromarquetti.github.io/calculator/",
+  "liveKind": "demo",
+  "status": "learning",
+  "featured": false
+}

@@ -1,0 +1,29 @@
+{
+  "name": "dotfiles-common",
+  "tagline": {
+    "en": "Shared dotfiles and provisioning for my Linux machines.",
+    "pt-br": "Dotfiles e provisionamento compartilhados entre minhas máquinas Linux."
+  },
+  "description": {
+    "en": "A shared collection of configuration files used across my dotfiles repositories. It keeps shell, editor, and terminal settings in one place, with variants for Manjaro and Pop!_OS. The goal is to bring a new machine to a familiar setup quickly.",
+    "pt-br": "Uma coleção compartilhada de arquivos de configuração usada nos meus repositórios de dotfiles. Mantém ajustes de shell, editor e terminal em um só lugar, com variantes para Manjaro e Pop!_OS. O objetivo é deixar uma máquina nova com o ambiente familiar em pouco tempo."
+  },
+  "details": {
+    "en": [
+      "dotfiles-common holds the configuration files shared by my Linux machines. Shell, editor, and terminal settings live in one repository instead of being copied between machines.",
+      "Small variants cover Manjaro and Pop!_OS, so the same base can be paired with the package and desktop differences of each distribution.",
+      "The goal is a new machine that reaches a familiar setup quickly, without rebuilding every preference by hand."
+    ],
+    "pt-br": [
+      "O dotfiles-common guarda os arquivos de configuração compartilhados entre minhas máquinas Linux. Ajustes de shell, editor e terminal ficam em um único repositório, em vez de serem copiados de máquina em máquina.",
+      "Pequenas variantes cobrem Manjaro e Pop!_OS, então a mesma base pode ser combinada com as diferenças de pacotes e de desktop de cada distribuição.",
+      "O objetivo é deixar uma máquina nova com o ambiente familiar em pouco tempo, sem refazer cada preferência à mão."
+    ]
+  },
+  "year": 2026,
+  "order": 12,
+  "stack": ["Shell"],
+  "repoUrl": "https://github.com/pedromarquetti/dotfiles-common",
+  "status": "active",
+  "featured": false
+}

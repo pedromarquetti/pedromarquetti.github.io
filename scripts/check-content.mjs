@@ -89,11 +89,37 @@ const contentFiles = walk(contentDirectory).filter((file) =>
   file.endsWith(".json"),
 );
 
+const projectDirectory = join(root, "src/content/projects");
+const projectSlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+let projectCount = 0;
+
 for (const file of contentFiles) {
   const relativePath = file.slice(root.length + 1);
   const content = readJson(relativePath);
-  if (content) {
-    checkStrings(content, relativePath);
+  if (!content) {
+    continue;
+  }
+
+  checkStrings(content, relativePath);
+
+  if (file.startsWith(`${projectDirectory}/`)) {
+    projectCount += 1;
+
+    const segment = relativePath.slice("src/content/projects/".length);
+    const match = /^([^/]+)\/index\.json$/.exec(segment);
+
+    if (!match) {
+      errors.push(
+        `${relativePath}: projects must live in src/content/projects/<slug>/index.json`,
+      );
+      continue;
+    }
+
+    if (!projectSlugPattern.test(match[1])) {
+      errors.push(
+        `${relativePath}: slug "${match[1]}" must be kebab-case (a-z, 0-9, single hyphens)`,
+      );
+    }
   }
 }
 
@@ -106,5 +132,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `Content check passed: ${keyCount} UI keys in 2 locales and ${contentFiles.length} content file(s).`,
+  `Content check passed: ${keyCount} UI keys in 2 locales, ${projectCount} project(s), and ${contentFiles.length} content file(s).`,
 );

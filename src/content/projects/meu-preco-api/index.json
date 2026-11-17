@@ -1,0 +1,31 @@
+{
+  "name": "Meu Preço API",
+  "tagline": {
+    "en": "Go API that parses supermarket receipts and tracks product prices over time.",
+    "pt-br": "API em Go que lê notas fiscais e acompanha o preço dos produtos ao longo do tempo."
+  },
+  "description": {
+    "en": "A Go and PostgreSQL API for collecting product price history from Brazilian supermarket receipts. It receives a receipt, parses the line items, and stores each product over time so prices can be compared. The GitHub Pages site serves as the API documentation.",
+    "pt-br": "Uma API em Go e PostgreSQL para montar um histórico de preços a partir de notas fiscais de supermercado brasileiras. Ela recebe a nota, interpreta os itens e guarda cada produto ao longo do tempo para comparar preços. O site no GitHub Pages funciona como documentação da API."
+  },
+  "details": {
+    "en": [
+      "Meu Preço API is a Go service backed by PostgreSQL. It receives a Brazilian supermarket receipt, parses the line items, and writes each product into a price history.",
+      "The stored history is what makes the project useful: the same product can be compared across receipts and across time instead of being read one note at a time.",
+      "The GitHub Pages site is the API documentation. It describes the endpoints and the data model, and it is the reference used while building the Flutter client."
+    ],
+    "pt-br": [
+      "A API Meu Preço é um serviço em Go com PostgreSQL. Ela recebe uma nota fiscal de supermercado brasileira, interpreta os itens e grava cada produto em um histórico de preços.",
+      "O histórico armazenado é o que torna o projeto útil: o mesmo produto pode ser comparado entre notas e ao longo do tempo, em vez de ser lido uma nota por vez.",
+      "O site no GitHub Pages é a documentação da API. Ele descreve os endpoints e o modelo de dados, e serve de referência durante o desenvolvimento do cliente Flutter."
+    ]
+  },
+  "year": 2026,
+  "order": 2,
+  "stack": ["Go", "PostgreSQL"],
+  "repoUrl": "https://github.com/pedromarquetti/meu-preco",
+  "liveUrl": "https://pedromarquetti.github.io/meu-preco/",
+  "liveKind": "docs",
+  "status": "active",
+  "featured": true
+}

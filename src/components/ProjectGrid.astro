@@ -1,0 +1,25 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import type { Locale } from "../i18n/locales";
+import type { Project } from "../lib/projects";
+
+interface Props {
+  projects: Project[];
+  locale: Locale;
+  headingLevel?: 2 | 3;
+}
+
+const { projects, locale, headingLevel = 3 } = Astro.props;
+---
+
+<ul class="project-grid" role="list">
+  {projects.map((project) => (
+    <li class="project-grid-item">
+      <ProjectCard
+        project={project}
+        locale={locale}
+        headingLevel={headingLevel}
+      />
+    </li>
+  ))}
+</ul>

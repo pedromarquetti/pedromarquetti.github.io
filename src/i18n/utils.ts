@@ -1,3 +1,4 @@
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { DEFAULT_LOCALE, isLocale, LOCALES, type Locale } from "./locales";
 import { ui, type UIKey } from "./ui";
 
@@ -26,6 +27,11 @@ export function stripLocale(pathname: string): string {
   }
 
   return segments.length > 0 ? `/${segments.join("/")}/` : "/";
+}
+
+export function localeLink(locale: Locale, path = ""): string {
+  const href = getRelativeLocaleUrl(locale, path);
+  return href.endsWith("/") ? href : `${href}/`;
 }
 
 export function localePath(locale: Locale, pathname: string): string {

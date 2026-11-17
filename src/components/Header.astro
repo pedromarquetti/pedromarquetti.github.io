@@ -1,0 +1,27 @@
+---
+import Nav from "./Nav.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import type { Locale } from "../i18n/locales";
+import { localeLink } from "../i18n/utils";
+
+interface Props {
+  locale: Locale;
+  showLanguageSwitcher?: boolean;
+}
+
+const { locale, showLanguageSwitcher = true } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href={localeLink(locale)}>
+      Pedro Marquetti
+    </a>
+    <Nav locale={locale} />
+    <div class="header-controls">
+      {showLanguageSwitcher && <LanguageSwitcher locale={locale} />}
+      <ThemeToggle locale={locale} />
+    </div>
+  </div>
+</header>

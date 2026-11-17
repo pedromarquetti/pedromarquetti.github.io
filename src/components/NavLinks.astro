@@ -1,0 +1,36 @@
+---
+import type { Locale } from "../i18n/locales";
+import { localeLink, stripLocale, t } from "../i18n/utils";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = stripLocale(Astro.url.pathname);
+
+const links = [
+  { key: "nav.home", path: "/", href: localeLink(locale) },
+  {
+    key: "nav.projects",
+    path: "/projects/",
+    href: localeLink(locale, "projects"),
+  },
+  {
+    key: "nav.journey",
+    path: "/journey/",
+    href: localeLink(locale, "journey"),
+  },
+  { key: "nav.about", path: "/about/", href: localeLink(locale, "about") },
+] as const;
+---
+
+<ul class="nav-links">
+  {links.map(({ key, path, href }) => (
+    <li>
+      <a href={href} aria-current={currentPath === path ? "page" : undefined}>
+        {t(locale, key)}
+      </a>
+    </li>
+  ))}
+</ul>

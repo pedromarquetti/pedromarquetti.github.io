@@ -13,6 +13,12 @@
   "hero.greeting": "Hi, I'm Pedro.",
   "hero.lead": "From biomedicine to software: I build tools that solve real problems.",
   "placeholder.body": "This page is being rebuilt. Content will arrive soon.",
+  "page.projects.title": "Projects — Pedro Marquetti",
+  "page.projects.description": "Selected software projects by Pedro Marquetti.",
+  "page.journey.title": "Journey — Pedro Marquetti",
+  "page.journey.description": "From biomedicine to software: my learning and professional journey.",
+  "page.about.title": "About — Pedro Marquetti",
+  "page.about.description": "Biomedical scientist moving into software development.",
   "cta.projects": "See my projects",
   "cta.journey": "Read my journey",
   "section.featured": "Selected projects",
@@ -28,7 +34,9 @@
   "timeline.goal": "Goal",
   "contact.title": "Get in touch",
   "notFound.title": "Page not found",
+  "notFound.metaTitle": "Page not found — Pedro Marquetti",
   "notFound.body": "The page you were looking for does not exist.",
   "notFound.home": "Back to home",
-  "footer.rights": "© {year} Pedro Marquetti"
+  "footer.rights": "© {year} Pedro Marquetti",
+  "footer.github": "GitHub"
 }

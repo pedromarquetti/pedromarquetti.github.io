@@ -1,0 +1,19 @@
+---
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/utils";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <p>{t(locale, "footer.rights", { year })}</p>
+  <p>|</p>
+  <a target="_blank" href="https://github.com/pedromarquetti">
+    {t(locale, "footer.github")}
+  </a>
+</footer>

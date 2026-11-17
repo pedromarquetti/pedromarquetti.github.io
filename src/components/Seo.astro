@@ -1,0 +1,59 @@
+---
+import { LANG_TAGS, type Locale } from "../i18n/locales";
+import { getAlternates, localePath } from "../i18n/utils";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { locale, title, description, noindex = false } = Astro.props;
+const site = Astro.site ?? Astro.url;
+const pathname = Astro.url.pathname;
+const canonical = noindex ? null : new URL(pathname, site).toString();
+const ogUrl = canonical ?? new URL(localePath(locale, "/"), site).toString();
+const ogImage = new URL(`/og/${locale}.png`, site).toString();
+const ogLocale = locale === "en" ? "en_US" : "pt_BR";
+const ogAlternateLocale = locale === "en" ? "pt_BR" : "en_US";
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{canonical && (
+  <>
+    <link rel="canonical" href={canonical} />
+    {getAlternates(pathname).map(({ locale: alternate, path }) => (
+      <link
+        rel="alternate"
+        hreflang={LANG_TAGS[alternate]}
+        href={new URL(path, site).toString()}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localePath("en", pathname), site).toString()}
+    />
+  </>
+)}
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pedro Marquetti" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={ogUrl} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale:alternate" content={ogAlternateLocale} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={title} />

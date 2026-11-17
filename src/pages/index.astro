@@ -1,8 +1,8 @@
 ---
-import PagePlaceholder from "../components/PagePlaceholder.astro";
+import Home from "../views/Home.astro";
 import { resolveLocale } from "../i18n/locales";
 
 const locale = resolveLocale(Astro.currentLocale);
 ---
 
-<PagePlaceholder locale={locale} />
+<Home locale={locale} />

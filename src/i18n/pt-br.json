@@ -13,6 +13,12 @@
   "hero.greeting": "Olá, sou o Pedro.",
   "hero.lead": "Da biomedicina ao software: construo ferramentas que resolvem problemas reais.",
   "placeholder.body": "Esta página está sendo reconstruída. O conteúdo chegará em breve.",
+  "page.projects.title": "Projetos — Pedro Marquetti",
+  "page.projects.description": "Projetos de software selecionados por Pedro Marquetti.",
+  "page.journey.title": "Trajetória — Pedro Marquetti",
+  "page.journey.description": "Da biomedicina ao software: minha trajetória de aprendizado e experiência profissional.",
+  "page.about.title": "Sobre — Pedro Marquetti",
+  "page.about.description": "Biomédico em transição para o desenvolvimento de software.",
   "cta.projects": "Ver meus projetos",
   "cta.journey": "Conhecer minha trajetória",
   "section.featured": "Projetos selecionados",
@@ -28,7 +34,9 @@
   "timeline.goal": "Objetivo",
   "contact.title": "Fale comigo",
   "notFound.title": "Página não encontrada",
+  "notFound.metaTitle": "Página não encontrada — Pedro Marquetti",
   "notFound.body": "A página que você procura não existe.",
   "notFound.home": "Voltar ao início",
-  "footer.rights": "© {year} Pedro Marquetti"
+  "footer.rights": "© {year} Pedro Marquetti",
+  "footer.github": "GitHub"
 }

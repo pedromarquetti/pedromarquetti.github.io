@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { t } from "../i18n/utils";
+---
+
+<BaseLayout
+  locale="en"
+  title={t("en", "notFound.metaTitle")}
+  description={t("en", "notFound.body")}
+  noindex
+  showLanguageSwitcher={false}
+>
+  <div class="not-found">
+    <h1>{t("en", "notFound.title")}</h1>
+    <p>{t("en", "notFound.body")}</p>
+    <p>
+      <a href="/">{t("en", "notFound.home")}</a>
+    </p>
+
+    <section class="not-found-pt" lang="pt-BR">
+      <h2>{t("pt-br", "notFound.title")}</h2>
+      <p>{t("pt-br", "notFound.body")}</p>
+      <p>
+        <a href="/pt-br/">{t("pt-br", "notFound.home")}</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

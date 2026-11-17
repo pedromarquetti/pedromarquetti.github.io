@@ -4,6 +4,7 @@ import ProjectGrid from "../components/ProjectGrid.astro";
 import type { Locale } from "../i18n/locales";
 import { localeLink, t } from "../i18n/utils";
 import { getFeaturedProjects } from "../lib/projects";
+import Icon from "../components/Icon.astro";
 
 interface Props {
   locale: Locale;
@@ -31,11 +32,33 @@ const projects = await getFeaturedProjects();
     </div>
   </section>
 
+  <section class="home-section">
+    <div class="section-header">
+      <h2>{t(locale, "section.about")}</h2>
+      <a class="section-link" href={localeLink(locale, "about")}>
+        {t(locale, "projects.viewAll")}
+        <!-- TODO: make this icon the same size of the 'a' tag text + make it inline 'View all projects ->' -->
+        <Icon
+          name="arrow-right"
+          class="icon"
+          style="display: flex; margin: auto; text-align: center;  max-width: 20%; max-height: 20%;"
+        />
+      </a>
+    </div>
+    <p>{t(locale, "section.description")}</p>
+  </section>
+
   <section class="home-section" aria-labelledby="featured-heading">
     <div class="section-header">
       <h2 id="featured-heading">{t(locale, "section.featured")}</h2>
       <a class="section-link" href={localeLink(locale, "projects")}>
         {t(locale, "projects.viewAll")}
+        <!-- TODO: make this icon the same size of the 'a' tag text + make it inline 'View all projects ->' -->
+        <Icon
+          name="arrow-right"
+          class="icon"
+          style="display: block; margin: auto; text-align: center;  max-width: 20%; max-height: 20%;"
+        />
       </a>
     </div>
     <ProjectGrid projects={projects} locale={locale} />

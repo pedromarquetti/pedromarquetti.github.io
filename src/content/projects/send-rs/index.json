@@ -20,6 +20,19 @@
       "O projeto é tanto sobre arquitetura quanto sobre conversar: um estudo para manter a interface de terminal estável enquanto os back ends diferem."
     ]
   },
+  "images": [
+    {
+      "src": "./popup.png",
+      "alt": {
+        "en": "Terminal chat window with a message popup offering Reply and Copy actions.",
+        "pt-br": "Janela de conversa no terminal com um pop-up de mensagem oferecendo as ações Responder e Copiar."
+      },
+      "caption": {
+        "en": "Message actions in the conversation view.",
+        "pt-br": "Ações de mensagem na visualização da conversa."
+      }
+    }
+  ],
   "year": 2026,
   "order": 5,
   "stack": ["Rust", "Ratatui"],

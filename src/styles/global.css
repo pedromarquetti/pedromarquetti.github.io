@@ -690,6 +690,105 @@ a:hover {
   font-size: var(--step--1);
 }
 
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-block-end: var(--space-6);
+}
+
+.timeline-item:last-child {
+  padding-block-end: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  inset-block: 2.5rem 0;
+  inset-inline-start: 1.125rem;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-marker {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-item[data-kind="present"] .timeline-marker {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.timeline-item[data-kind="goal"] .timeline-marker {
+  border-color: var(--color-accent);
+  border-style: dashed;
+  color: var(--color-accent);
+}
+
+.timeline-content {
+  padding-block-start: 0.2rem;
+}
+
+.timeline-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+
+.timeline-heading h2 {
+  margin: 0;
+  font-size: var(--step-1);
+}
+
+.timeline-content p {
+  margin-block: var(--space-3) 0;
+  color: var(--color-text-muted);
+}
+
+.timeline-badge {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-full);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.journey-cta {
+  margin-block-start: var(--space-7);
+}
+
 .not-found {
   padding-block: var(--space-5);
 }

@@ -1,13 +1,8 @@
 ---
-import Placeholder from "../views/Placeholder.astro";
+import Journey from "../views/Journey.astro";
 import { resolveLocale } from "../i18n/locales";
 
 const locale = resolveLocale(Astro.currentLocale);
 ---
 
-<Placeholder
-  locale={locale}
-  headingKey="nav.journey"
-  titleKey="page.journey.title"
-  descriptionKey="page.journey.description"
-/>
+<Journey locale={locale} />

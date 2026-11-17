@@ -11,6 +11,7 @@
     "check": "astro check",
     "check:content": "node scripts/check-content.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "check:redirects": "node scripts/check-redirects.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

@@ -37,6 +37,9 @@ jobs:
       - name: npm build
         run: npm run build
 
+      - name: npm redirect check
+        run: npm run check:redirects
+
       - name: npm link check
         run: npm run check:links
 

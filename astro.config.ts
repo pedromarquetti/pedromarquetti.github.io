@@ -10,4 +10,12 @@ export default defineConfig({
   },
   build: { format: "directory" },
   trailingSlash: "always",
+  // The old Next.js site was exported without trailing slashes. These
+  // extensionless routes were reachable and may still be linked. The `.html`
+  // forms are static files in public/ because Astro would otherwise emit them
+  // as `<path>.html/` directories.
+  redirects: {
+    "/about/dev": "/journey/",
+    "/about/biomedicine": "/journey/",
+  },
 });

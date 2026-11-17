@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { Locale } from "../i18n/locales";
+import { localeLink, t } from "../i18n/utils";
+import { journeySteps } from "../lib/journey";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const projectsHref = localeLink(locale, "projects");
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(locale, "page.journey.title")}
+  description={t(locale, "page.journey.description")}
+>
+  <header class="page-header">
+    <h1>{t(locale, "nav.journey")}</h1>
+    <p class="lead">{t(locale, "journey.intro")}</p>
+  </header>
+
+  <ol class="timeline" role="list">
+    {journeySteps.map((step, index) => (
+      <li class="timeline-item" data-kind={step.kind}>
+        <span class="timeline-marker" aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div class="timeline-content">
+          <div class="timeline-heading">
+            <h2>{step.title[locale]}</h2>
+            {step.kind !== "past" && (
+              <span class="timeline-badge">
+                {t(
+                  locale,
+                  step.kind === "present"
+                    ? "timeline.present"
+                    : "timeline.goal",
+                )}
+              </span>
+            )}
+          </div>
+          {step.body[locale].map((paragraph) =>
+            typeof paragraph === "string" ? (
+              <p>{paragraph}</p>
+            ) : (
+              <p>
+                {paragraph.map((part) =>
+                  typeof part === "string" ? (
+                    part
+                  ) : (
+                    <a href={part.href}>{part.text}</a>
+                  ),
+                )}
+              </p>
+            ),
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <p class="journey-cta">
+    <a class="button" href={projectsHref}>
+      {t(locale, "cta.projects")}
+    </a>
+  </p>
+</BaseLayout>

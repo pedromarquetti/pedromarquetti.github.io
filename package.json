@@ -12,14 +12,18 @@
     "check:content": "node scripts/check-content.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:redirects": "node scripts/check-redirects.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "check:lighthouse": "lhci autorun",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.5",
     "astro": "7.4.12"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
+    "@lhci/cli": "^0.16.1",
     "prettier": "3.10.1",
     "prettier-plugin-astro": "1.1.2",
     "typescript": "5.9.3"

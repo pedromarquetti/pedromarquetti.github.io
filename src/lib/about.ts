@@ -41,7 +41,7 @@ export const aboutSections: AboutSection[] = [
     id: "tech-phase",
     title: {
       "pt-br": "Fase tecnológica",
-      en: "Tech Phase"
+      en: "Tech Phase",
     },
     paragraphs: {
       en: [
@@ -50,18 +50,17 @@ export const aboutSections: AboutSection[] = [
           "When I was younger I used to learn logic basics with ",
           link("Small Basics", sb),
         ],
-        "But only in more recent years I really started coding bigger projects"
+        "But only in more recent years I really started coding bigger projects",
       ],
       "pt-br": [
         "Sempre amei tecnologia no geral: desde software e lógica de programação até hardware e conserto de PCs",
         [
           "Quando era mais novo, aprendi muito sobre lógica de programação com ",
-          link("Small Basics", sb)
+          link("Small Basics", sb),
         ],
-        "Mas só ultimamente tenho focado em desenvolviemnto de projetos maiores"
-
-      ]
-    }
+        "Mas só ultimamente tenho focado em desenvolviemnto de projetos maiores",
+      ],
+    },
   },
   {
     id: "code",

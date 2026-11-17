@@ -1,6 +1,7 @@
 ---
 import { LANG_TAGS, type Locale } from "../i18n/locales";
-import { getAlternates, localePath } from "../i18n/utils";
+import { getAlternates, localePath, t } from "../i18n/utils";
+import { site as profile } from "../lib/site";
 
 interface Props {
   locale: Locale;
@@ -17,6 +18,16 @@ const ogUrl = canonical ?? new URL(localePath(locale, "/"), site).toString();
 const ogImage = new URL(`/og/${locale}.png`, site).toString();
 const ogLocale = locale === "en" ? "en_US" : "pt_BR";
 const ogAlternateLocale = locale === "en" ? "pt_BR" : "en_US";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Pedro Marquetti",
+  jobTitle: t(locale, "schema.jobTitle"),
+  url: new URL(localePath(locale, "/"), site).toString(),
+  sameAs: [profile.github, profile.linkedin],
+  knowsLanguage: ["pt-BR", "en"],
+};
 ---
 
 <title>{title}</title>
@@ -57,3 +68,5 @@ const ogAlternateLocale = locale === "en" ? "pt_BR" : "en_US";
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:image:alt" content={title} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

@@ -40,8 +40,14 @@ jobs:
       - name: npm redirect check
         run: npm run check:redirects
 
+      - name: npm seo check
+        run: npm run check:seo
+
       - name: npm link check
         run: npm run check:links
+
+      - name: npm lighthouse check
+        run: npm run check:lighthouse
 
       - uses: actions/upload-artifact@v4
         with:

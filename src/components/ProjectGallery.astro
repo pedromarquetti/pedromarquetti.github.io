@@ -21,6 +21,8 @@ const { images, locale } = Astro.props;
           <Image
             src={image.src}
             alt={image.alt[locale]}
+            widths={[480, 768, 1024, 1600]}
+            sizes="(min-width: 72rem) 1100px, 100vw"
             loading="lazy"
             decoding="async"
           />

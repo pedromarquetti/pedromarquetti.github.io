@@ -1,6 +1,7 @@
 {
   "site.title": "Pedro Marquetti — Biomedical scientist & software developer",
   "site.description": "Biomedical scientist moving into software development. I build backend systems, automation, and terminal tools.",
+  "schema.jobTitle": "Biomedical scientist and software developer",
   "nav.home": "Home",
   "nav.projects": "Projects",
   "nav.journey": "Journey",

@@ -3,8 +3,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const dist = join(root, "dist");
-// TODO: fix this, the GH pages will be hosted at https://phlm.dev.br
-const site = "https://pedromarquetti.github.io";
+const site = "https://phlm.dev.br";
 
 const redirects = [
   { from: "/about.html", to: "/about/" },

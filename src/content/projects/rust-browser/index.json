@@ -20,6 +20,30 @@
       "O projeto explora interfaces de terminal e até que ponto a web pode ser lida sem imagens, scripts ou um motor de renderização completo."
     ]
   },
+  "images": [
+    {
+      "src": "./mainpage.png",
+      "alt": {
+        "en": "Rust Browser main page showing default keybinds",
+        "pt-br": "Janela principal do Rust Browser mostrando os atalhos padrão"
+      },
+      "caption": {
+        "en": "Rust browser ships with vim-like default keymaps.",
+        "pt-br": "O Rust browser vem com atalhos de teclado que são similares ao Vim."
+      }
+    },
+    {
+      "src": "./search.png",
+      "alt": {
+        "en": "Search results from SearXNG",
+        "pt-br": "Resultados de pesquisa do SearXNG"
+      },
+      "caption": {
+        "en": "The app supports SearXNG search engine by default, but could be configured to use others in the future.",
+        "pt-br": "O aplicativo usa SearXNG como padrão para pesquisas, mas pode ser configurado para outros provedores no futuro."
+      }
+    }
+  ],
   "year": 2026,
   "order": 4,
   "stack": ["Rust", "Ratatui"],

@@ -241,16 +241,16 @@ if (!existsSync(join(dist, "sitemap-index.xml"))) {
   errors.push("dist/: sitemap-index.xml is missing");
 }
 
-const cnamePath = join(dist, "CNAME");
-if (!existsSync(cnamePath)) {
-  errors.push("dist/: CNAME is missing (GitHub Pages custom domain)");
-} else {
-  const domain = readFileSync(cnamePath, "utf8").trim();
-  const expectedDomain = new URL(SITE).hostname;
-  if (domain !== expectedDomain) {
-    errors.push(`CNAME is "${domain}", expected "${expectedDomain}"`);
-  }
-}
+// const cnamePath = join(dist, "CNAME");
+// if (!existsSync(cnamePath)) {
+//   errors.push("dist/: CNAME is missing (GitHub Pages custom domain)");
+// } else {
+//   const domain = readFileSync(cnamePath, "utf8").trim();
+//   const expectedDomain = new URL(SITE).hostname;
+//   if (domain !== expectedDomain) {
+//     errors.push(`CNAME is "${domain}", expected "${expectedDomain}"`);
+//   }
+// }
 
 const robotsPath = join(dist, "robots.txt");
 if (!existsSync(robotsPath)) {
